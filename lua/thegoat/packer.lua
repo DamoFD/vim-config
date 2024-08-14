@@ -88,6 +88,24 @@ return require('packer').startup(function(use)
     use('HiPhish/rainbow-delimiters.nvim')
     use('p00f/nvim-ts-rainbow')
 
+    -- Autocompletion
+    use('hrsh7th/cmp-nvim-lsp')
+    use('hrsh7th/cmp-buffer')
+    use('hrsh7th/cmp-path')
+    use('hrsh7th/cmp-cmdline')
+
+    -- Snippets
+    use('L3MON4D3/LuaSnip')
+    use('saadparwaiz1/cmp_luasnip')
+
+    -- Preconfigured Snippets
+    use('rafamadriz/friendly-snippets')
+
+    -- codeium AI
+    use {
+        'Exafunction/codeium.vim'
+    }
+
     -- Vim Wiki
     -- use('vimwiki/vimwiki')
 end)
