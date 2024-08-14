@@ -15,7 +15,7 @@ vim.g.indentLine_bufNameExclude = {
 }
 
 vim.opt.list = true
-vim.opt.listchars:append("space:⋅")
+vim.opt.listchars = { tab = '▸ ', trail = '•', extends = '›', precedes = '‹' }
 -- vim.opt.listchars:append("eol:↴")
 
 -- Catpuccin

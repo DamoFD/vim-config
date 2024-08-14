@@ -90,9 +90,6 @@ vim.api.nvim_exec([[
     endfunction
 ]], false)
 
-vim.api.nvim_set_keymap('i', '<leader>N', '<Esc>:call IPhpInsertUse()<CR>', {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', '<leader>n', ':call PhpInsertUse()<CR>', {noremap = true, silent = true})
-
 vim.api.nvim_exec([[
     augroup terminal
         autocmd!

@@ -1,6 +1,6 @@
 require("mason").setup()
 require("mason-lspconfig").setup({
-    ensure_installed = { "lua_ls", "tailwindcss", "intelephense" }
+    ensure_installed = { "lua_ls", "tailwindcss", "intelephense", "pyright", "rust_analyzer", "kotlin_language_server", "quick_lint_js", "gopls" }
 })
 
 local on_attach = function(_, _)
@@ -23,6 +23,7 @@ require("lspconfig").tailwindcss.setup {
         "tailwindcss-language-server",
         "--stdio"
     },
+
     filetypes = {
         "aspnetcorerazor",
         "astro",
@@ -70,7 +71,29 @@ require("lspconfig").tailwindcss.setup {
     on_attach = on_attach,
 }
 
+require("lspconfig").rust_analyzer.setup {
+        on_attach = on_attach
+}
+
+require("lspconfig").gopls.setup {
+        on_attach = on_attach
+}
+
 require("lspconfig").intelephense.setup {
     cmd = { "intelephense", "--stdio" },
     on_attach = on_attach
 }
+
+require("lspconfig").pyright.setup {
+        on_attach = on_attach
+}
+
+require("lspconfig").kotlin_language_server.setup {
+    on_attach = on_attach
+}
+
+require("lspconfig").quick_lint_js.setup {
+    on_attach = on_attach,
+    filetypes = {"javascript", "javascriptreact", "jsx"}
+}
+

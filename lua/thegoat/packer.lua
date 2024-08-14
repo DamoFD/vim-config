@@ -13,10 +13,10 @@ return require('packer').startup(function(use)
 		requires = { {'nvim-lua/plenary.nvim'} }
 	}
 	use({
-		"neanias/everforest-nvim",
+		"shaunsingh/nord.nvim",
 		-- Optional; default configuration will be used if setup isn't called.
 		config = function()
-			require("everforest").setup()
+			require("nord").set()
 		end,
 	})
 	use( 'nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
@@ -27,7 +27,7 @@ return require('packer').startup(function(use)
         'neovim/nvim-lspconfig',
     })
     use( 'folke/trouble.nvim' )
-    use( 'lukas-reineke/indent-blankline.nvim' )
+    use{ 'lukas-reineke/indent-blankline.nvim', commit = 'v2.20.8' }
     use( 'hrsh7th/nvim-cmp' )
     use( 'hrsh7th/vim-vsnip' )
     use( 'hrsh7th/vim-vsnip-integ' )
@@ -84,4 +84,10 @@ return require('packer').startup(function(use)
         'mfussenegger/nvim-dap',
         'mfussenegger/nvim-lint',
     })
+
+    use('HiPhish/rainbow-delimiters.nvim')
+    use('p00f/nvim-ts-rainbow')
+
+    -- Vim Wiki
+    -- use('vimwiki/vimwiki')
 end)
